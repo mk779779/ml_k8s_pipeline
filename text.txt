@@ -1,0 +1,40 @@
+curl -X 'POST' \
+  'http://127.0.0.1:8000/generate/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "text": "Once upon a",
+  "max_length": 50,
+  "num_return_sequences": 1
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/generate/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "text": "safdf eewr sopoad ioe fasd ",
+  "max_length": 50,
+  "num_return_sequences": 1
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/generate/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "text": "reddit Illusion of gaia PressureUnder PaninoColburro ",
+  "max_length": 50,
+  "num_return_sequences": 1
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/generate/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "text": "",
+  "max_length": 50,
+  "num_return_sequences": 1
+}'
+
+docker build -t fastapi-gpt2 .
+
+docker run -d -p 8000:8000 fastapi-gpt2
+
